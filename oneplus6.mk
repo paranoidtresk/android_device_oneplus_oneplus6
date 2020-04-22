@@ -22,6 +22,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/oneplus/oneplus6/oneplus6-vendor.mk)
 
+# Gapps
+TARGET_GAPPS_ARCH := arm64
+IS_PHONE := true
+TARGET_MINIMAL_APPS := false
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
