@@ -1,5 +1,6 @@
 /*
    Copyright (c) 2016, The CyanogenMod Project
+   Copyright (c) 2020, Paranoid Android
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -66,7 +67,7 @@ void vendor_load_properties()
 		property_override("ro.product.system.model", "OnePlus 6");
 		property_override("ro.product.device", "OnePlus6");
 		property_override("ro.system.build.fingerprint", "OnePlus/OnePlus6/OnePlus6:10/QKQ1.190716.003/1910270526:user/release-keys");
-		property_override("ro.fingerprint.inscreen_disabled", "1");
+		property_override("ro.fingerprint.inscreen_disabled", "true");
 
 	} else if (variant == "OnePlus6T") {
 		property_override("ro.product.system.device", "oneplus6t");
@@ -76,9 +77,6 @@ void vendor_load_properties()
 	}
 
 	// Common Properties
-
-	// Fingerprint
-	property_override("ro.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
 
 	// Dalvik
 	property_override_dual("dalvik.vm.heapstartsize", "dalvik.vm.heapstartsize", "16m");

@@ -71,10 +71,6 @@ PRODUCT_PACKAGES += \
     libbluetooth_qti \
     libbt-logClient.so
 
-# Boot control
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl
-
 # Common init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -95,32 +91,22 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_COPY_FILES += \
-    vendor/pa/config/permissions/vendor.pa.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.pa.biometrics.fingerprint.inscreen.xml
+    vendor/pa/config/permissions/vendor.pa.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.pa.biometrics.fingerprint.inscreen.xml
 
 PRODUCT_PACKAGES += \
-    pa.biometrics.fingerprint.inscreen@1.0-service.oneplus_fajita
-
-# Hotword enrollment
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:system/etc/permissions/privapp-permissions-hotword.xml
+    pa.biometrics.fingerprint.inscreen@1.0-service.oneplus_oneplus6
 
 # Input
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gf_input.idc:system/usr/idc/gf_input.idc \
-    $(LOCAL_PATH)/configs/gf_input.kl:system/usr/keylayout/gf_input.kl
+    $(LOCAL_PATH)/configs/gf_input.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/gf_input.idc \
+    $(LOCAL_PATH)/configs/gf_input.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gf_input.kl
 
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.oneplus_sdm845
 
-# Media
-PRODUCT_PACKAGES += \
-    libmediaplayerservice
-
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0 \
-    android.hardware.nfc@1.1 \
     android.hardware.nfc@1.2 \
     android.hardware.secure_element@1.0 \
     com.android.nfc_extras \
@@ -171,9 +157,6 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     librecovery_updater_msm \
     libz \
 
-PRODUCT_PACKAGES_DEBUG += \
-    update_engine_client
-
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 29
 
@@ -187,19 +170,18 @@ PRODUCT_COPY_FILES += \
 
 # Common RRO Overlays
 PRODUCT_PACKAGES += \
-    SDM845CommonBluetoothRes \
-    SDM845CommonCarrierConfigRes \
-    SDM845CommonFrameworkRes \
-    SDM845CommonFrameworkPARes \
-    SDM845CommonSystemUIPARes \
-    SDM845CommonTelephonyRes
+    OnePlus6SeriesBluetooth \
+    OnePlus6SeriesCarrierConfig \
+    OnePlus6SeriesFramework \
+    OnePlus6SeriesSystemUI \
+    OnePlus6SeriesTelephony
 
 # Variant-specific RRO overlays
 PRODUCT_PACKAGES += \
-    OnePlus6FrameworksRes \
+    OnePlus6Frameworks \
     OnePlus6SystemUI \
-    OnePlus6TFrameworksRes \
-    OnePlus6TSettingsPARes \
+    OnePlus6TFrameworks \
+    OnePlus6TSettings \
     OnePlus6TSystemUI
 
 # Add option to disable notch
