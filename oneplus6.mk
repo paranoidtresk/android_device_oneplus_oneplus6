@@ -114,19 +114,11 @@ PRODUCT_PACKAGES += \
     vendor.nxp.nxpese@1.0 \
     vendor.nxp.nxpnfc@1.0
 
-# NN
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-rtti
-
 # Performance
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/msm_irqbalance.conf \
     $(LOCAL_PATH)/configs/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/perf/perfconfigstore.xml \
     $(LOCAL_PATH)/configs/android.hardware.graphics.composer@2.3-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.graphics.composer@2.3-service.rc
-
-# Power
-PRODUCT_PACKAGES += \
-    power.qcom
 
 # QTI common
 TARGET_COMMON_QTI_COMPONENTS := \
